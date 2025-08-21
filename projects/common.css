@@ -96,6 +96,21 @@ p > a:active {
 	transition: var(--hover-transition-time);
 }
 
+h2 > a {
+	text-decoration: none;
+	color: var(--primary-site-color);
+}
+
+h2 > a:hover {
+	color: var(--secondary-site-color);
+	transition: var(--hover-transition-time);
+}
+
+h2 > a:active {
+	color: var(--secondary-site-color);
+	transition: var(--hover-transition-time);
+}
+
 li {
 	font-size: var(--large-font);
 }
@@ -105,21 +120,17 @@ li::marker {
 	font-size: 24px;
 }
 
-figure {
-	margin: 20px auto;
-	width: 75%;
+/* ~*~*~*~*~*~* Bound To The Oath *~*~*~*~*~*~ */
+
+#btto-wrapper #btto-img-carousel {
+	display: flex;
+	justify-content: space-around;
+
+	width: 100%;
 }
 
-figure img {
-	width: 100%;
-	border-radius: var(--primary-border-radius);
-}
-
-figure figcaption {
-	text-align: center;
-	font-style: italic;
-	font-size: var(--medium-font);
-	width: 100%;
+#btto-wrapper #btto-img-carousel img {
+	width: 32%;
 }
 
 /* ~*~*~*~*~*~* DLL Projects *~*~*~*~*~*~ */
@@ -149,38 +160,29 @@ figure figcaption {
 	transition: var(--hover-transition-time);
 }
 
-#dll-wrapper .dll-project-summary {
+#dll-wrapper .dll-project {
 	display: flex;
+	flex-direction: column;
+	align-items: center;
 
-	/* border: 1px solid var(--dark-grey); */
 }
 
-#dll-wrapper .dll-project-summary .dll-project-left {
-	width: 35%;
-	display: flex;
-	justify-content: center;
-	/* border-right: 1px solid var(--dark-grey); */
-	padding: 10px;
+#dll-wrapper .dll-project img {
+	width: 70%;
+	margin: 10px;
 }
 
-#dll-wrapper .dll-project-summary .dll-project-left img {
-	width: 100%;
-}
-
-#dll-wrapper .dll-project-summary .dll-project-right {
-	width: 65%;
-}
-
-#dll-wrapper .dll-project-summary .dll-project-right h2 {
+#dll-wrapper .dll-project h2 {
 	font-family: Perfect-Regular;
 	color: var(--primary-site-color);
 	font-size: 58px;
 	margin: 5px 10px;
+	text-align: center;
 	/* border-bottom: 1px solid var(--dark-grey); */
 }
 
-#dll-wrapper .dll-project-summary .dll-project-right p {
+#dll-wrapper .dll-project p {
 	text-align: justify;
 	font-size: var(--medium-font);
-	margin: 5px 10px;
+	margin: 10px;
 }
