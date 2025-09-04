@@ -104,6 +104,14 @@ footer a {
 	transition: var(--hover-transition-time);
 }
 
+footer a:hover {
+	color: var(--secondary-site-color);
+}
+
+footer a:active {
+	color: var(--secondary-site-color);
+}
+
 @media only screen and (max-width: 524px) {
 	.desktop-footer {
 		display: none;
@@ -241,7 +249,8 @@ input[type=checkbox] {
 
 label { 
   	-webkit-appearance: push-button;
-  	-moz-appearance: button; 
+  	-moz-appearance: button;
+	appearance: push-button;
   	display: inline-block;
   	cursor: pointer;
   	transition: var(--hover-transition-time);
@@ -396,6 +405,10 @@ label:active {
 	font-size: var(--large-font);
 	color: black;
 	transition: var(--hover-transition-time);
+}
+
+#programming p > a.standard-link {
+	text-decoration: underline;
 }
 
 #programming p > a:hover {
