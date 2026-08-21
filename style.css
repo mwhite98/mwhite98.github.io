@@ -79,6 +79,31 @@ h3 {
   width: 100%;
 }
 
+@media only screen and (max-width: 1400px) {
+  #wrapper-right-column {
+    padding: 100px 50px;
+  }
+
+  #stem-holder img {
+    height: 1000px;
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  #stem-holder {
+    display: none;
+  }
+
+  #stem-holder img {
+    display: none;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+}
+
 .experience-table-key {
   width: 100%;
 
@@ -89,6 +114,14 @@ h3 {
   align-items: center;
 
   font-size: 24px;
+}
+
+@media only screen and (max-width: 500px) {
+  .experience-table-key {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
+  }
 }
 
 .experience-table-key p {
