@@ -1,595 +1,213 @@
-/* 
-   ~*~*~*~*~*~* Table of Contents *~*~*~*~*~*~ 
-   Cmd+F these titles to jump to each section of the style sheet.
-   1. General styles
-   2. Main
-   3. Left
-      – NAV
-   4. Right
-      - SECTIONS: GENERAL
-      — SECTIONS: HOME
-      – SECTIONS: PROGRAMMING
-      – SECTIONS: WRITING
-      – SECTIONS: KIND WORDS
-      – SECTIONS: CONTACT
-*/
-
-/*
-	TODO: figure out what on earth is going on in safari
-	TODO: remove horizontal scroll on mobile (is this a safari thing)
-	TODO: get a linter set up
-*/
-
-/* ~*~*~*~*~*~* General styles *~*~*~*~*~*~ */
+/* --+--+-- general --+--+-- */
 
 :root {
-	/* Colours */
-	--beige:                #FFFBF0;
-	--light-grey: 			    #D6D5D5;
-	--dark-grey: 		      	#5E5E5E;
-	--primary-site-color:   #849468;		/* green */
-	--secondary-site-color: #54A4CC;		/* blue */
+  --grey: #30323B;
+  --grey-faded: rgb(48, 50, 59, .4);
 
-	/*⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺⎺\
-	|	Styling for links:                                                        |
-	|	– Links that take the user to a new page / off-site appear blue on hover  |
-	|	– Links that keep the user on page appear green on hover                  |
-	\____________________________________________________________________________*/
-
-	/* Font sizes */
-	--small-font:  16px;
-	--medium-font: 20px;
-	--large-font:  32px;
-	--title-font:  85px;
-
-	--primary-border-radius: 20px;
-	--hover-transition-time: 0.2s;
-}
-
-/* Make text a lil smaller for iPads & smaller computer screens */
-@media only screen and (max-width: 724px) {
-	:root {
-		--small-font:  16px;
-		--medium-font: 20px;
-		--large-font:  28px;
-		--title-font:  60px;
-	}
-}
-
-/* A little smaller for mobile! */
-@media only screen and (max-width: 524px) {
-	:root {
-		--large-font:  20px;
-		--title-font:  40px;
-	}
+  --er-lightblue: #8acbea;
+  --er-lightblue-tint: #E1F1F9;
+  --er-darkblue: #30599d;
+  --er-darkblue-tint: #C8CFE4;
+  --er-lightgreen: #87b861;
+  --er-lightgreen-tint: #DFECD3;
+  --er-darkgreen: #286a32;
+  --er-darkgreen-tint: #C3D5C3;
 }
 
 @font-face {
-	font-family: Perfect-Regular;
-	src: url('Perfect-Regular.ttf');
+  font-family: Helvetica-Neue-Extended;
+  src: url('assets/fonts/Helvetica\ Neue\ LT\ Std\ 33\ Thin\ Extended.otf');
 }
 
-body {
-	margin: 0;
-	background-color: var(--beige);
-	font-family: "Helvetica Neue", Helvetica, sans-serif, "Helvetica Roman", Icons;
+html, body, .wrapper {
+  height: 100%;
+  margin: 0;
+
+  color: var(--grey);
 }
 
-.centre-items {
-	text-align: center;
+a, a:hover, a:visited, a:active {
+  color: inherit;
+  text-decoration: none;
 }
 
-/* ~*~*~*~*~*~* Main *~*~*~*~*~*~ */
+a:hover {
+  cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-family: Helvetica-Neue-Extended;
+  color: #FAFAFA;
+  text-shadow: 0 0 4px var(--grey);
+}
+
+h1 {
+  font-size: 52px;
+  margin: 20px;
+}
+
+h2 {
+  text-shadow: none;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+/* --+--+-- main --+--+-- */
 
 .wrapper {
-	width: 100%;
-	display: grid;
-	grid-template-columns: 50% 50%;
-}
-
-@media only screen and (max-width: 524px) {
-	.wrapper {
-		grid-template-columns: auto;
-	}
-}
-
-footer p {
-	margin: 0;
-	padding: 10px;
-	font-size: var(--medium-font);
-}
-
-footer a {
-	color: black;
-	transition: var(--hover-transition-time);
-}
-
-footer a:hover {
-	color: var(--secondary-site-color);
-}
-
-footer a:active {
-	color: var(--secondary-site-color);
-}
-
-@media only screen and (max-width: 524px) {
-	.desktop-footer {
-		display: none;
-	}
-
-	.mobile-footer {
-		border-style: solid none none none;
-		border-color: black;
-		border-width: 2px;
-		margin-top: 10px;
-	}
-}
-
-@media only screen and (min-width: 525px) {
-	.mobile-footer {
-		display: none;
-	}
-}
-
-/* ~*~*~*~*~*~* Left *~*~*~*~*~*~ */
-
-.left-column {
-	padding: 0;
-}
-
-/* ===== NAV ===== */
-nav ul {
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-}
-
-nav li {
-	width: calc(100% - 22px);
-	border-style: none solid solid none;
-	border-color: black;
-	border-width: 2px;
-	padding: 0 10px 0;
-}
-
-@media only screen and (max-width: 524px) {
-	nav li {
-		width: calc(100% - 20px);
-		border-style: none none solid none;
-	}
-}
-
-nav a {
-	width: 100%;
-	text-decoration: none;
-	color: var(--primary-site-color);
-	transition: var(--hover-transition-time);
-}
-
-nav a:hover {
-	color: var(--secondary-site-color);
-}
-
-nav a:active {
-	color: var(--secondary-site-color);
-}
-
-.nav-text {
-	/* 
-		NOTE: font-size & -family for .nav-text can be found under styling 
-		for right-column h1, since they look the same. CMD+F ".nav-text" to find.
-	*/
-	overflow-wrap: break-word;
-}
-
-/* ~*~*~*~*~*~* Right *~*~*~*~*~*~ */
-
-.right-column {
-	padding: 0;
-}
-
-/* ===== SECTIONS: GENERAL ===== */
-.hidden {
-	display: none;
-}
-
-.right-column section h1 {
-	margin: 0;
-
-	border-style: none none solid none;
-	border-width: 2px;
-	border-color: black;
-
-	color: var(--primary-site-color);
-	overflow-wrap: break-word;
-}
-
-@media only screen and (max-width: 524px) {
-	.right-column section h1 {
-		color: var(--secondary-site-color);
-	}
-}
-
-.right-column section h1, .nav-text {
-	font-size: var(--title-font);
-	font-family: Perfect-Regular;
-}
-
-.right-column section p {
-	margin: 0;
-	padding: 20px;
-	font-size: var(--large-font);
-}
-
-/* +++ Right side scroll box +++ */
-.sec-content-wrapper {
-	overflow: scroll;
-	height: calc(100vh - 102px);
-	padding: 0 5px;
-}
-
-@media only screen and (max-width: 524px) {
-	.sec-content-wrapper {
-		overflow: visible;
-		height: 100%;
-	}
-}
-
-.right-column .section-end-padding {
-	height: 20px;
-}
-
-/* +++ Toggle +++ */
-/* I snagged this neat little hack from here: https://dabblet.com/gist/1506530 */
-input[type=checkbox] {
-	position: absolute;
-   	top: -9999px;
-   	left: -9999px;
-}
-
-label { 
-  	-webkit-appearance: push-button;
-  	-moz-appearance: button;
-	appearance: push-button;
-  	display: inline-block;
-  	cursor: pointer;
-  	transition: var(--hover-transition-time);
-}
-
-label:hover {
-	color: var(--primary-site-color);
-	cursor: pointer;
-}
-
-label:active {
-	color: var(--primary-site-color);
-	cursor: pointer;
-}
-
-/* Default State */
-.toggle-div {
-	margin: 0 20px;
-	padding: 15px;
-	/* margin + padding = (20*2) + (15*2) = 70 */
-	width: calc(100% - 70px);
-
-	background-color: white;
-	background-repeat: no-repeat;
-	background-size: cover;
-	border-radius: var(--primary-border-radius);
-	background-image: url("assets/bq-bkg-g1.png");
-
-	font-size: var(--medium-font);
-   	display: none;
-}
-
-@media only screen and (max-width: 524px) {
-	.toggle-div {
-		font-size: var(--small-font);
-	}
-}
-
-/* ===== SECTIONS: HOME ===== */
-#home #headshot-phrase {
-	text-decoration: underline;
-	transition: var(--hover-transition-time);
-}
-
-#home #headshot-phrase:hover {
-	color: var(--primary-site-color);
-}
-
-#home .headshot-initial-state {
-	opacity: 0;
-}
-
-#home .headshot-hidden {
-	display: none;
-	animation: fadeout 0.2s;
-	opacity: 0;
-}
-
-#home .headshot-visible {
-	display: block;
-	animation: fadein 0.2s;
-	opacity: 0.9;
-}
-
-@keyframes fadeout {
-	0%   {opacity: 0.9;}
-	10%  {opacity: 0.8;}
-	20%  {opacity: 0.7;}
-	30%  {opacity: 0.6;}
-	40%  {opacity: 0.5;}
-	50%  {opacity: 0.45;}
-	60%  {opacity: 0.4;}
-	70%  {opacity: 0.3;}
-	80%  {opacity: 0.2;}
-	90%  {opacity: 0.1;}
-	100% {opacity: 0;}
-}
-
-@keyframes fadein {
-	0%   {opacity: 0;}
-	10%  {opacity: 0.1;}
-	20%  {opacity: 0.2;}
-	30%  {opacity: 0.3;}
-	40%  {opacity: 0.4;}
-	50%  {opacity: 0.45;}
-	60%  {opacity: 0.5;}
-	70%  {opacity: 0.6;}
-	80%  {opacity: 0.7;}
-	90%  {opacity: 0.8;}
-	100% {opacity: 0.9;}
-}
-
-#home #headshot {
-	position: absolute;
-	top: 80px;
-	left: calc(50% - 260px);
-	width: 250px;
-	border-radius: var(--primary-border-radius);
-}
-
-@media only screen and (max-width: 724px) {
-	#home #headshot {
-		width: 150px;
-		left: calc(50% - 85px);
-		top: 40px;
-	}
-}
+  background-color: white;
 
-#home a {
-	color: black;
-	transition: var(--hover-transition-time);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
 }
 
-/* Don't do the headshot on mobile, too cluttery */
-@media only screen and (max-width: 524px) {
-	#home #headshot {
-		display: none;
-	}
-
-	#home #headshot-phrase {
-		text-decoration: none;
-	}
-
-	#home #headshot-phrase:hover {
-		color: black;
-	}
-}
-
-#home a:hover {
-	color: var(--secondary-site-color);
-	transition: var(--hover-transition-time);
-}
-
-#home a:active {
-	color: var(--secondary-site-color);
-	transition: var(--hover-transition-time);
-}
-
-/* ===== SECTIONS: PROGRAMMING ===== */
-@media only screen and (min-width: 525px) and (max-width: 1334px) {
-	#programming-content-wrapper {
-		height: calc(100vh - 204px);
-	}
-}
-
-#programming p {
-	padding: 20px 20px 5px;
-}
-
-#programming p > a {
-	text-decoration: none;
-	font-size: var(--large-font);
-	color: black;
-	transition: var(--hover-transition-time);
-}
-
-#programming p > a.standard-link {
-	text-decoration: underline;
+#stem-holder {
+  width: 700px;
 }
 
-#programming p > a:hover {
-	color: var(--secondary-site-color);
+#stem-holder img {
+  width: 100%;
 }
 
-#programming p > a:active {
-	color: var(--secondary-site-color);
+#wrapper-right-column {
+  padding: 150px 50px;
+  width: 100%;
 }
 
-input[id=programming-toggle-1]:checked ~ #ptd-1 {
-	margin: 0 20px;
-	display: inline-block;
-}
-
-input[id=programming-toggle-2]:checked ~ #ptd-2 {
-	margin: 0 20px;
-	display: inline-block;
-}
-
-input[id=programming-toggle-3]:checked ~ #ptd-3 {
-	margin: 0 20px;
-	display: inline-block;
-}
-
-input[id=programming-toggle-4]:checked ~ #ptd-4 {
-	margin: 0 20px;
-	display: inline-block;
-}
+.experience-table-key {
+  width: 100%;
 
-/* ===== SECTIONS: WRITING ===== */
-@media only screen and (min-width: 525px) and (max-width: 793px) {
-	#writing-content-wrapper {
-		height: calc(100vh - 204px);
-	}
-}
-
-#writing p {
-	padding: 20px 20px 5px;
-}
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
 
-#writing p > a {
-/*	text-decoration: none;*/
-	font-size: var(--large-font);
-	color: black;
-	transition: var(--hover-transition-time);
+  font-size: 24px;
 }
 
-#writing p > a:hover {
-	color: var(--secondary-site-color);
+.experience-table-key p {
+  margin: 20px 0;
 }
 
-#writing p > a:active {
-	color: var(--secondary-site-color);
+.er-education {
+  color: var(--er-lightgreen);
 }
 
-#writing .writing-ex {
-	padding-top: 5px;
-	font-size: var(--medium-font);
-	color: var(--primary-site-color);
-	font-style: italic;
+.er-work {
+  color: var(--er-darkblue);
 }
 
-#writing .writing-ex > a {
-	text-decoration: none;
-	font-size: var(--medium-font);
-	color: black;
-	font-style: normal;
+.er-projects {
+  color: var(--er-lightblue);
 }
 
-#writing .writing-ex:last-child {
-	margin-bottom: 20px;
+.er-publications {
+  color: var(--er-darkgreen);
 }
-
-@media only screen and (max-width: 524px) {
-	#writing .writing-ex {
-		font-size: var(--small-font);
-	}
 
-	#writing .writing-ex > a {
-		font-size: var(--small-font);
-	}
-}
+.experience-table {
+  width: 100%;
+  margin-top: 20px;
 
-input[id=writing-toggle-1]:checked ~ #wtd-1 {
-	margin: 0 20px;
-	display: inline-block;
+  height: 500px;
+  overflow-y: scroll;
 }
 
-/* ===== SECTIONS: KIND WORDS ===== */
-@media only screen and (min-width: 525px) and (max-width: 1137px) {
-	#kind-words-content-wrapper {
-		height: calc(100vh - 204px);
-	}
+.experience-table a:hover .experience-row {
+  transition: background-color 100ms linear;
 }
-
-#kind-words .a-kind-word {
-	margin: 20px auto;
-	padding: 15px;
-	width: 90%;
-	max-width: 600px;
 
-	background-color: white;
-	background-repeat: no-repeat;
-	background-size: cover;
-	border-radius: var(--primary-border-radius);
+.experience-table a:hover .experience-row:has(.er-education) {
+  transition: 100ms linear;
+  background-color: var(--er-lightgreen-tint);
 }
 
-section .a-kind-word p {
-	font-size: var(--small-font);
-	padding: 2px 10px;
+.experience-table a:hover .experience-row:has(.er-work) {
+  transition: 100ms linear;
+  background-color: var(--er-darkblue-tint);
 }
 
-section .a-kind-word a {
-	color: black;
-	transition: var(--hover-transition-time);
+.experience-table a:hover .experience-row:has(.er-projects) {
+  transition: 100ms linear;
+  background-color: var(--er-lightblue-tint);
 }
 
-section .a-kind-word a:hover {
-	color: var(--secondary-site-color);
+.experience-table a:hover .experience-row:has(.er-publications) {
+  transition: 100ms linear;
+  background-color: var(--er-darkgreen-tint);
 }
 
-section .a-kind-word a:active {
-	color: var(--secondary-site-color);
-}
+.experience-table .experience-row {
+  height: 40px;
+  padding: 3px 10px;
+  border-bottom: 1px dashed rgb(48, 50, 59, .4);
 
-.bq-subtitle {
-	color: var(--dark-grey);
-	text-shadow: none;
-	font-style: italic;
-}
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
 
-#bq4 .bq-subtitle, #bq6 .bq-subtitle {
-	color: var(--light-grey);
-	text-shadow: 1px 1px black;
+  font-size: 16px;
 }
 
-.a-kind-word blockquote {
-	margin: 0 auto;
-	padding: 2px 10px 10px;
-	width: 95%;
-	font-size: var(--medium-font);
+.experience-row#work-ftlotg {
+  border-bottom: none;
 }
 
-#bq1 blockquote, #bq4 blockquote, #bq6 blockquote, #bq1, #bq4, #bq6 {
-	color: white;
-	text-shadow: 1px 1px black;
+.experience-row .er-key {
+  width: 5%;
+  display: flex;
+  justify-content: center;
 }
 
-#bq1 {
-	margin-top: 0;
-	background-image: url("assets/bq-bkg-clouds.jpg");
-	background-position: right center;
+.experience-row .er-date {
+  width: 10%;
+  display: flex;
+  justify-content: center;
 }
 
-#bq2, #bq3, #bq5 {
-	background-image: url("assets/bq-bkg-g1.png");
+.experience-row .er-title {
+  width: 45%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
-#bq4 {
-	background-image: url("assets/bq-bkg-field.jpg");
-	background-position: center 90%;
+.experience-row .er-description {
+  width: 33%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
-#bq6 {
-	background-image: url("assets/bq-bkg-mountain.jpg");
-	background-position: center 60%;
+.experience-row .er-read-more {
+  width: 5%;
+  display: flex;
+  justify-content: center;
 }
 
-/* ===== SECTIONS: CONTACT ===== */
+.contact {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
 
-#contact > p > a {
-	font-size: var(--large-font);
-	color: black;
-	transition: var(--hover-transition-time);
+  margin-top: 20px;
 }
 
-#contact > p > a:hover {
-	color: var(--secondary-site-color);
+.contact h3 {
+  margin: 10px;
 }
 
-#contact > p > a:active {
-	color: var(--secondary-site-color);
+.contact a:hover h3 {
+  color: var(--er-lightblue);
+  transition: color 100ms linear;
 }
