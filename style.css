@@ -1,0 +1,213 @@
+/* --+--+-- general --+--+-- */
+
+:root {
+  --grey: #30323B;
+  --grey-faded: rgb(48, 50, 59, .4);
+
+  --er-lightblue: #8acbea;
+  --er-lightblue-tint: #E1F1F9;
+  --er-darkblue: #30599d;
+  --er-darkblue-tint: #C8CFE4;
+  --er-lightgreen: #87b861;
+  --er-lightgreen-tint: #DFECD3;
+  --er-darkgreen: #286a32;
+  --er-darkgreen-tint: #C3D5C3;
+}
+
+@font-face {
+  font-family: Helvetica-Neue-Extended;
+  src: url('assets/fonts/Helvetica\ Neue\ LT\ Std\ 33\ Thin\ Extended.otf');
+}
+
+html, body, .wrapper {
+  height: 100%;
+  margin: 0;
+
+  color: var(--grey);
+}
+
+a, a:hover, a:visited, a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-family: Helvetica-Neue-Extended;
+  color: #FAFAFA;
+  text-shadow: 0 0 4px var(--grey);
+}
+
+h1 {
+  font-size: 52px;
+  margin: 20px;
+}
+
+h2 {
+  text-shadow: none;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+/* --+--+-- main --+--+-- */
+
+.wrapper {
+  background-color: white;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+#stem-holder {
+  width: 700px;
+}
+
+#stem-holder img {
+  width: 100%;
+}
+
+#wrapper-right-column {
+  padding: 150px 50px;
+  width: 100%;
+}
+
+.experience-table-key {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+
+  font-size: 24px;
+}
+
+.experience-table-key p {
+  margin: 20px 0;
+}
+
+.er-education {
+  color: var(--er-lightgreen);
+}
+
+.er-work {
+  color: var(--er-darkblue);
+}
+
+.er-projects {
+  color: var(--er-lightblue);
+}
+
+.er-publications {
+  color: var(--er-darkgreen);
+}
+
+.experience-table {
+  width: 100%;
+  margin-top: 20px;
+
+  height: 500px;
+  overflow-y: scroll;
+}
+
+.experience-table a:hover .experience-row {
+  transition: background-color 100ms linear;
+}
+
+.experience-table a:hover .experience-row:has(.er-education) {
+  transition: 100ms linear;
+  background-color: var(--er-lightgreen-tint);
+}
+
+.experience-table a:hover .experience-row:has(.er-work) {
+  transition: 100ms linear;
+  background-color: var(--er-darkblue-tint);
+}
+
+.experience-table a:hover .experience-row:has(.er-projects) {
+  transition: 100ms linear;
+  background-color: var(--er-lightblue-tint);
+}
+
+.experience-table a:hover .experience-row:has(.er-publications) {
+  transition: 100ms linear;
+  background-color: var(--er-darkgreen-tint);
+}
+
+.experience-table .experience-row {
+  height: 40px;
+  padding: 3px 10px;
+  border-bottom: 1px dashed rgb(48, 50, 59, .4);
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 16px;
+}
+
+.experience-row#work-ftlotg {
+  border-bottom: none;
+}
+
+.experience-row .er-key {
+  width: 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.experience-row .er-date {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+}
+
+.experience-row .er-title {
+  width: 45%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.experience-row .er-description {
+  width: 33%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.experience-row .er-read-more {
+  width: 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.contact {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+
+  margin-top: 20px;
+}
+
+.contact h3 {
+  margin: 10px;
+}
+
+.contact a:hover h3 {
+  color: var(--er-lightblue);
+  transition: color 100ms linear;
+}
