@@ -31,7 +31,7 @@
       <img src="assets/plant-stem-transparent.png" alt="plant stem" />
     </div>
     <div id="wrapper-right-column">
-      <h1>✻ myla white ✻</h1>
+      <h1 class="title"><span class="play-flower" id="left-title-flower" can-toggle>✻</span> myla white <span class="play-flower" id="right-title-flower" can-toggle>✻</span></h1>
       <div class="experience-table-key">
         <h2 class="er-education">✦ education</h2>
         <h2 class="er-work">❋ work</h2>
@@ -263,6 +263,12 @@
       </div>
     </div>
   </div>
+
+  <script type="module">
+    import { playhtml } from "https://unpkg.com/playhtml";
+    playhtml.init({});
+  </script>
+  <script type="text/javascript" src="index.js"></script>
 </body>
 
 </html>
