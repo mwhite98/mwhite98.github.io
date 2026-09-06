@@ -116,6 +116,23 @@ h3 {
   font-size: 24px;
 }
 
+.experience-table-key button.table-key-nav {
+  border: none;
+  background: none;
+}
+
+.experience-table-key button.table-key-nav:hover h2 {
+  text-shadow: 0 0 4px var(--grey);
+}
+
+.experience-table-key button.table-key-nav.inactive {
+  pointer-events: none;
+}
+
+.experience-table-key button.table-key-nav.inactive h2 {
+  color: #D1D1D1;
+}
+
 @media only screen and (max-width: 500px) {
   .experience-table-key {
     flex-direction: column;
@@ -128,19 +145,19 @@ h3 {
   margin: 20px 0;
 }
 
-.er-education {
+.er-education, .er-education h2 {
   color: var(--er-lightgreen);
 }
 
-.er-work {
+.er-work, .er-work h2 {
   color: var(--er-darkblue);
 }
 
-.er-projects {
+.er-projects, .er-projects h2 {
   color: var(--er-lightblue);
 }
 
-.er-publications {
+.er-publications, .er-publications h2 {
   color: var(--er-darkgreen);
 }
 

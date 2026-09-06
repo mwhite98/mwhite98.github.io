@@ -22,7 +22,6 @@
   website todos
   - html template for linked "read more" pages
   - contact/bio line
-  - filter table based on keys
 -->
 
 <body>
@@ -33,10 +32,18 @@
     <div id="wrapper-right-column">
       <h1 class="title"><span class="play-flower" id="left-title-flower" can-toggle can-mirror>✻</span> myla white <span class="play-flower" id="right-title-flower" can-toggle can-mirror>✻</span></h1>
       <div class="experience-table-key">
-        <h2 class="er-education">✦ education</h2>
-        <h2 class="er-work">❋ work</h2>
-        <h2 class="er-projects">✷ projects</h2>
-        <h2 class="er-publications">✣ publications</h2>
+        <button class="table-key-nav er-education">
+          <h2>✦ education</h2>
+        </button>
+        <button class="table-key-nav er-work">
+          <h2>❋ work</h2>
+        </button>
+        <button class="table-key-nav er-projects">
+          <h2>✷ projects</h2>
+        </button>
+        <button class="table-key-nav er-publications">
+          <h2>✣ publications</h2>
+        </button>
       </div>
       <experience-table></experience-table>
       <div class="contact">
