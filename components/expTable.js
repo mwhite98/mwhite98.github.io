@@ -4,12 +4,8 @@ import { experienceList } from './expList.js';
 
 /**
  * TODOs
- * clean up stylesheets (both js and css)
- * https://stackoverflow.com/questions/48380267/css-variables-root-vs-host
- * clean up js folders / files
- * 
- * remove bottom border for final item
  * make list vertical shorter on mobile
+ * make table height dynamic based on number of filtered items?
  */
 
 const navList = document.getElementsByClassName('table-key-nav')
@@ -59,6 +55,10 @@ export class ExperienceTable extends LitElement {
     }
   }
 
+  _styleLastRow () {
+
+  }
+
   connectedCallback() {
     super.connectedCallback();
 
@@ -79,6 +79,11 @@ export class ExperienceTable extends LitElement {
     let tableHTML = ``
     const items = this.listItems;
     for (const item of items) {
+      let lastItem = ''
+      if (item === items[items.length - 1]) {
+        lastItem = 'last-row'
+      }
+
       let rowKey
       switch (item.type) {
         case 'education':
@@ -102,12 +107,12 @@ export class ExperienceTable extends LitElement {
 
       let experienceRow
       if (item?.link) {
-        experienceRow = html`<a href="${item.link}" target="_blank"><div class="experience-row" id="${item.id}">
+        experienceRow = html`<a href="${item.link}" target="_blank"><div class="experience-row ${lastItem}" id="${item.id}">
           ${mainContent}
           <div class="er-read-more">→</div>
         </div></a>`;
       } else {
-        experienceRow = html`<div class="experience-row" id="${item.id}">
+        experienceRow = html`<div class="experience-row ${lastItem}" id="${item.id}">
           ${mainContent}
           <div class="er-read-more"></div>
         </div>`;

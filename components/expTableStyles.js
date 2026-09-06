@@ -3,32 +3,6 @@ import { css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js
 export const tableStyles = css`
 /* --+--+-- general --+--+-- */
 
-:root {
-  --grey: #30323B;
-  --grey-faded: rgb(48, 50, 59, .4);
-
-  --er-lightblue: #8acbea;
-  --er-lightblue-tint: #E1F1F9;
-  --er-darkblue: #30599d;
-  --er-darkblue-tint: #C8CFE4;
-  --er-lightgreen: #87b861;
-  --er-lightgreen-tint: #DFECD3;
-  --er-darkgreen: #286a32;
-  --er-darkgreen-tint: #C3D5C3;
-}
-
-@font-face {
-  font-family: Helvetica-Neue-Extended;
-  src: url('assets/fonts/Helvetica\ Neue\ LT\ Std\ 33\ Thin\ Extended.otf');
-}
-
-html, body, .wrapper {
-  height: 100%;
-  margin: 0;
-
-  color: var(--grey);
-}
-
 a, a:hover, a:visited, a:active {
   color: inherit;
   text-decoration: none;
@@ -38,98 +12,7 @@ a:hover {
   cursor: pointer;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-  font-family: Helvetica-Neue-Extended;
-  color: #FAFAFA;
-  text-shadow: 0 0 4px var(--grey);
-}
-
-h1 {
-  font-size: 52px;
-  margin: 20px;
-}
-
-h2 {
-  text-shadow: none;
-}
-
-h3 {
-  font-size: 24px;
-}
-
-/* --+--+-- main --+--+-- */
-
-.wrapper {
-  background-color: white;
-
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-}
-
-#stem-holder {
-  width: 700px;
-}
-
-#stem-holder img {
-  width: 100%;
-}
-
-#wrapper-right-column {
-  padding: 150px 50px;
-  width: 100%;
-}
-
-@media only screen and (max-width: 1400px) {
-  #wrapper-right-column {
-    padding: 100px 50px;
-  }
-
-  #stem-holder img {
-    height: 1000px;
-    width: auto;
-  }
-}
-
-@media only screen and (max-width: 750px) {
-  #stem-holder {
-    display: none;
-  }
-
-  #stem-holder img {
-    display: none;
-  }
-
-  h2 {
-    font-size: 24px;
-  }
-}
-
-.experience-table-key {
-  width: 100%;
-
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-  align-items: center;
-
-  font-size: 24px;
-}
-
-@media only screen and (max-width: 500px) {
-  .experience-table-key {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 20px;
-  }
-}
-
-.experience-table-key p {
-  margin: 20px 0;
-}
+/* --+--+-- table --+--+-- */
 
 .er-education {
   color: var(--er-lightgreen);
@@ -193,7 +76,7 @@ h3 {
   font-size: 16px;
 }
 
-.experience-row#work-ftlotg {
+.experience-row.last-row {
   border-bottom: none;
 }
 
@@ -227,19 +110,5 @@ h3 {
   width: 5%;
   display: flex;
   justify-content: center;
-}
-
-.contact {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: center;
-
-  margin-top: 20px;
-}
-
-.contact h3 {
-  margin: 10px;
 }
 `;

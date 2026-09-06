@@ -20,7 +20,7 @@ export const experienceList = [
     "id": "work-sefi",
     "type": "work",
     "date": "2025–",
-    "title": "Communications Assitant, Web Developer",
+    "title": "Communications Assistant, Web Developer",
     "description": "European Society for Engineering Education (SEFI)"
   },
   {
