@@ -111,4 +111,19 @@ a:hover {
   display: flex;
   justify-content: center;
 }
+
+/* --+--+-- responsivity --+--+-- */
+
+@media only screen and (max-width: 500px) {
+  .experience-table {
+    width: 90%;
+    margin-top: 20px;
+
+    height: 400px;
+  }
+
+  .experience-row .er-date {
+    display: none;
+  }
+}
 `;

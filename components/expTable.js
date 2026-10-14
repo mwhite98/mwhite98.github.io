@@ -2,12 +2,6 @@ import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/li
 import { tableStyles } from './expTableStyles.js';
 import { experienceList } from './expList.js';
 
-/**
- * TODOs
- * make list vertical shorter on mobile
- * make table height dynamic based on number of filtered items?
- */
-
 const navList = document.getElementsByClassName('table-key-nav')
 const navArray = Array.from(navList)
 
@@ -53,10 +47,6 @@ export class ExperienceTable extends LitElement {
         }
       })
     }
-  }
-
-  _styleLastRow () {
-
   }
 
   connectedCallback() {

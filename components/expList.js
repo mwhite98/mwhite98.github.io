@@ -142,5 +142,12 @@ export const experienceList = [
     "date": "2018",
     "title": "Web Developer Co-op",
     "description": "For the Love of the Game"
+  },
+  {
+    "id": "work-i-serve",
+    "type": "work",
+    "date": "2014–2018",
+    "title": "Waitress",
+    "description": "misc"
   }
 ]
